@@ -5,7 +5,7 @@ all: html
 
 html: $(HTML_FILES)
 
-%.html: %.Rmd compile.R
+%.html: %.Rmd compile.R mkMaps.R
 	Rscript compile.R "$<"
 
 .PHONY: clean

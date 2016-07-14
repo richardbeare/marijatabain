@@ -24,9 +24,10 @@ ipapubs$popup <- createPopupText(ipapubs$Language, ipapubs$Publication)
 
 ## ---- CreateMap ----
 m <- leaflet()
-m <- addTiles(m, group = "OSM (default)") # uses open street map
+#m <- addTiles(m, group = "OSM (default)") # uses open street map
 #    m <- addProviderTiles(m,"Stamen.Toner", group = "Toner")
 #    m <- addProviderTiles(m, "Stamen.TonerLite", group = "Toner Lite")
+m <- addProviderTiles(m, "OpenTopoMap", group="MapQuestOpen.Aerial")
 
 m <- addMarkers(m, lng=ipapubs$lon, lat=ipapubs$lat, popup=ipapubs$popup)
 
