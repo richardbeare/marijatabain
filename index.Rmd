@@ -1,11 +1,11 @@
 ---
-title: "Illustrations of the IPA from Latrobe University, Australia"
+title: "Illustrations of the IPA from La Trobe University, Australia"
 output: html_document
 ---
 
-# Locations of languages studied by researchers at Latrobe University
+# Locations of languages studied by researchers at La Trobe University
 
-The map below shows locations of languages for which an illustration in the Journal of the International Phonetic Association has been published by researchers at Latrobe University. 
+The map below shows locations of languages for which an illustration in the Journal of the International Phonetic Association has been published by researchers at La Trobe University. 
 
 Click on the pin on the map to identify the language and follow the link to the publication.
 
