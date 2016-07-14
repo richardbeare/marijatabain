@@ -1,0 +1,9 @@
+name: Illustrations of the IPA from Latrobe University, Australia
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+baseurl: /latrobeipa
+highlighter: rouge

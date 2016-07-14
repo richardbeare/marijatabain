@@ -1,0 +1,27 @@
+---
+title: "Illustrations of the IPA from Latrobe University, Australia"
+output: html_document
+---
+
+# Locations of languages studied by researchers at Latrobe University
+
+The map below shows locations of languages for which an illustration in the Journal of the International Phonetic Association has been published by researchers at Latrobe University. 
+
+Click on the pin on the map to identify the language and follow the link to the publication.
+
+```{r, echo=FALSE}
+library(knitr)
+read_chunk("mkMaps.R")
+```
+```{r, Setup, echo=FALSE,message=FALSE}
+
+```
+```{r, CreateMap, echo=FALSE}
+
+```
+```{r,DisplayMap, echo=FALSE}
+
+```
+
+
+
