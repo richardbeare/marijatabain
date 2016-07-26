@@ -1,5 +1,5 @@
-Language,Address,Publication
-Pitjantjatjara,"Ayers Rock, Australia",http://dx.doi.org/10.1017/S002510031500033X
-Makasar,"Makassar, Indonesia",http://dx.doi.org/10.1017/S0025100314000243
-Goemai,"Jos, Nigeria",http://dx.doi.org/10.1017/S0025100314000243
-Lisu,"Shibacha village, Yunnan, China","Tabain, Bradley & Yu (in preparation) - Lisu: Illustration of the IPA"
+"Language","Address","Publication","Pubtype"
+"Pitjantjatjara","Ayers Rock, Australia","http://dx.doi.org/10.1017/S002510031500033X","illustration"
+"Makasar","Makassar, Indonesia","http://dx.doi.org/10.1017/S0025100314000243","illustration"
+"Goemai","Jos, Nigeria","http://dx.doi.org/10.1017/S0025100314000243","illustration"
+"Lisu","Shi Ba Cha, Yingjiang , Dehong, Yunnan, China","Tabain, Bradley & Yu (in preparation) - Lisu: Illustration of the IPA","illustration"
