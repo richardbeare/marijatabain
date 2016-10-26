@@ -1,9 +1,8 @@
 ---
-title: "Illustrations of the IPA"
+title: "Illustrations of the International Phonetic Association (IPA)"
 output: html_document
 ---
 
-# Illustrations of the International Phonetic Association (IPA)
 
 The map below shows (approximate) locations of languages for which there is an Illustration in the 
 Journal of the International Phonetic Association (as of October 2016). Green markers denote Illustrations that also appear

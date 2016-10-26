@@ -1,5 +1,5 @@
 ---
-title: "Illustrations of the IPA from La Trobe University, Australia"
+title: "Illustrations of the IPA from LaTrobe University, Australia"
 output: html_document
 ---
 
