@@ -7,6 +7,8 @@ All the code is on the gh-pages branch
 
 Links:
 
-https://richardbeare.github.io/ipa_illustrations/
+https://richardbeare.github.io/marijatabain/
 
-https://richardbeare.github.io/ipa_illustrations/marija_pubs.html
+https://richardbeare.github.io/marijatabain/ipa_illustrations_all.html
+
+https://richardbeare.github.io/marijatabain/ipa_illustrations_marija.html
