@@ -1,0 +1,30 @@
+---
+title: "Illustrations of the IPA"
+output: html_document
+---
+
+# Illustrations of the International Phonetic Association (IPA)
+
+The map below shows (approximate) locations of languages for which there is an Illustration in the 
+Journal of the International Phonetic Association (as of October 2016). Green markers denote Illustrations that also appear
+in the Handbook of the International Phonetic Association.
+
+Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available.
+
+```{r, echo=FALSE}
+library(knitr)
+read_chunk("mkMaps.R")
+```
+```{r, Setup, echo=FALSE,message=FALSE}
+
+```
+```{r, CreateMap, echo=FALSE}
+
+```
+```{r,DisplayMapEveryone, echo=FALSE}
+
+```
+<br>
+
+Funded by the Australian Research Council, and LaTrobe University Linguistics and Phonetics.
+

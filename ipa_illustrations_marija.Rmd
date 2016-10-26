@@ -1,0 +1,26 @@
+---
+title: "Illustrations of the IPA from La Trobe University, Australia"
+output: html_document
+---
+
+
+
+```{r, echo=FALSE}
+library(knitr)
+read_chunk("mkMaps2.R")
+```
+
+```{r, Setup, echo=FALSE,message=FALSE}
+
+```
+The map below shows locations of languages for which an illustration in the Journal of the International Phonetic Association has been published by researchers at La Trobe University.
+
+Click on the pin on the map to identify the language and follow the link to the publication.
+
+```{r, DisplayMap1, echo=FALSE}
+
+```
+
+
+
+

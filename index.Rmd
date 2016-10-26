@@ -1,29 +1,28 @@
 ---
-title: "Illustrations of the IPA"
+title: "Marija Tabain - Languages I have worked on"
 output: html_document
 ---
 
-# Illustrations of the International Phonetic Association (IPA)
 
-The map below shows (approximate) locations of languages for which an Illustration in the 
-Journal of the International Phonetic Association. Green markers denote Illustrations that also appear
-in the Handbook of the  International Phonetic Association.
-
-Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available.
 
 ```{r, echo=FALSE}
 library(knitr)
-read_chunk("mkMaps.R")
+read_chunk("mkMaps2.R")
 ```
+
 ```{r, Setup, echo=FALSE,message=FALSE}
 
 ```
-```{r, CreateMap, echo=FALSE}
+The map below shows locations of languages I have worked on over the years.
+
+Click on the pin on the map to identify the language and follow the link to a sample publication.
+
+Illustrations of the IPA are indicated by purple markers.
+
+```{r, DisplayMap2, echo=FALSE}
 
 ```
-```{r,DisplayMapEveryone, echo=FALSE}
 
-```
 
 
 
