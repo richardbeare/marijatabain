@@ -2,9 +2,13 @@
 
 source("maputils.R")
 mpubs <- read.csv("Marijas_languages.csv", stringsAsFactors=FALSE)
-mpubs <- geocodeL(mpubs)
-mpubs$popup <- createPopupText(mpubs$Language, mpubs$Publication)
-
+if (file.exists("mpubs.Rda")) {
+  load("mpubs.Rda")
+} else {
+  mpubs <- geocodeL(mpubs)
+  mpubs$popup <- createPopupText(mpubs$Language, mpubs$Publication)
+  save(mpubs, file="mpubs.Rda")
+}
 ## ---- DisplayMap1 ----
 
 m0 <- theMap(subset(mpubs, Pubtype=="illustration"), type="c")

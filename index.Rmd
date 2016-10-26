@@ -1,13 +1,15 @@
 ---
-title: "Illustrations of the IPA from La Trobe University, Australia"
+title: "Illustrations of the IPA"
 output: html_document
 ---
 
-# Locations of languages studied by researchers at La Trobe University
+# Illustrations of the International Phonetic Association (IPA)
 
-The map below shows locations of languages for which an illustration in the Journal of the International Phonetic Association has been published by researchers at La Trobe University. 
+The map below shows (approximate) locations of languages for which an Illustration in the 
+Journal of the International Phonetic Association. Green markers denote Illustrations that also appear
+in the Handbook of the  International Phonetic Association.
 
-Click on the pin on the map to identify the language and follow the link to the publication.
+Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available.
 
 ```{r, echo=FALSE}
 library(knitr)
@@ -19,7 +21,7 @@ read_chunk("mkMaps.R")
 ```{r, CreateMap, echo=FALSE}
 
 ```
-```{r,DisplayMap, echo=FALSE}
+```{r,DisplayMapEveryone, echo=FALSE}
 
 ```
 
