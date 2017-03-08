@@ -8,7 +8,7 @@ The map below shows (approximate) locations of languages for which there is an I
 Journal of the International Phonetic Association (as of October 2016). Green markers denote Illustrations that also appear
 in the Handbook of the International Phonetic Association.
 
-Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available.
+Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available. Languages marked with * have multiple pins.
 
 ```{r, echo=FALSE}
 library(knitr)

@@ -1,15 +1,21 @@
 ## ---- Setup ----
+library(tidyverse)
 source("maputils.R")
 ipapubs <- read.csv("ipa_details.csv", stringsAsFactors=FALSE)
-ipaill <- read.csv("IPA_Illustrations.csv", stringsAsFactors=FALSE, encoding="latin1")
+ipaill.raw <- read.csv("IPA_Illustrations.csv", stringsAsFactors=FALSE, encoding="latin1")
+ipaill <- gather(ipaill.raw, key=AddCol, value="Address", starts_with("Address"))
+ipaill <- subset(ipaill, Address != "")
+lcount <- summarise(group_by(ipaill, Language), pins=n())
 
+ipaill <- merge(ipaill, lcount, by.x="Language", by.y="Language")
+ipaill <- mutate(ipaill, pinstr=ifelse(pins==1, "", "*"))
 if (file.exists("ipastuff.Rda")) {
   load("ipastuff.Rda")
 } else {
   ipapubs <- geocodeL(ipapubs)
   ipapubs$popup <- createPopupText(ipapubs$Language, ipapubs$Publication)
   ipaillnew <- geocodeL(ipaill)
-  ipaillnew$popup <- createPopupText2(ipaill$Language, ipaill$Publication, ipaill$Recording)
+  ipaillnew$popup <- createPopupText2(ipaill$Language, ipaill$Publication, ipaill$Recording, ipaill$pinstr, ipaill$Address)
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
 ## ---- CreateMap ----

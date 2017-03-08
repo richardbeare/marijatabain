@@ -11,7 +11,7 @@ geocodeL <- function(ipapubs)
   return(ipapubs)
 }
 
-createPopupText <- function(language, pub)
+createPopupText <- function(language, pub, lcount=NULL)
 {
   ## create a clickable language link, if there is a publication link
   ## Otherwise have a publication title following the language name
@@ -20,24 +20,25 @@ createPopupText <- function(language, pub)
   pub <- gsub("^DOI:", "doi:", pub)
   pub <- gsub("^doi:", "http://dx.doi.org/", pub)
   links <- grep("^http", pub)
-  popup <- paste(language, "</br>", pub)
+  popup <- paste(language, "<sup>", lcount, "</sup></br>", pub)
   popup[links] <- paste("<a href=\"", pub[links], "\">", language[links], "</a>", sep="")
   return(popup)
 }
-createPopupText2 <- function(language, pub, recording)
+createPopupText2 <- function(language, pub, recording, lcount=NULL, address=NULL)
 {
   ## create a clickable language link, if there is a publication link
   ## Otherwise have a publication title following the language name
   ## substitute DOI for the appropriate link
   
   if (length(pub) != length(recording)) {stop("recording and pub links dont match\n")}
-  
+  multitag <- paste("<sup>", lcount, "</sup>")
+  multitag[lcount==""] <- ""
   pub <- gsub("^DOI:", "doi:", pub)
   pub <- gsub("^doi:", "http://dx.doi.org/", pub)
   links <- grep("^http", pub)
-  popup <- paste(language, "</br>", pub)
+  popup <- paste0(language, multitag, "</br>", pub, "</br>", address, "</br>")
   recordings <- (!is.na(recording)) | (nchar(recording)>0)
-  popup[links] <- paste("<a href=\"", pub[links], "\">", language[links], "</a>", sep="")
+  popup[links] <- paste("<a href=\"", pub[links], "\">", language[links], multitag[links], "</a>", "</br>", address[links], "</br>", sep="")
   popup[recordings] <- paste(popup[recordings], "</br><a href=\"", recording[recordings], "\"> Recording</a>", sep="")
   return(popup)
 }
@@ -77,7 +78,7 @@ theMap <- function(ipapubs, type="a", icons=these.icons)
               e = addProviderTiles(m, "Esri.WorldPhysical", group="Esri.WorldPhysical")
   )
   ii <- nest(group_by(ipapubs, Pubtype))
-
+  ii <- arrange(ii, Pubtype)
   for (k in 1:length(ii$data)) {
       iid <- ii$data[[k]]
       m <- addMarkers(m, lng=iid$lon, lat=iid$lat, popup=iid$popup, icon=these.icons[[k]])
