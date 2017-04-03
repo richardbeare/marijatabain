@@ -15,7 +15,19 @@ if (file.exists("ipastuff.Rda")) {
   ipapubs <- geocodeL(ipapubs)
   ipapubs$popup <- createPopupText(ipapubs$Language, ipapubs$Publication)
   ipaillnew <- geocodeL(ipaill)
-  ipaillnew$popup <- createPopupText2(ipaill$Language, ipaill$Publication, ipaill$Recording, ipaill$pinstr, ipaill$Address)
+  ipaillnew$popup <- createPopupText2(ipaill$Language, ipaill$Publication, ipaill$Recording, 
+                                      ipaill$pinstr, ipaill$Address)
+  save(ipapubs, ipaillnew, file="ipastuff.Rda")
+}
+
+## check whether the csv and address structures match
+newones <- setdiff(ipaill$Language, ipaillnew$Language)
+if (length(newones) > 0) {
+  extras.df <- subset(ipaill, Language %in% newones)
+  ipaill.extras <- geocodeL(extras.df)
+  ipaill.extras$popup <- createPopupText2(extras.df$Language, extras.df$Publication, extras.df$Recording,
+                                          extras.df$pinstr, extras.df$Address)
+  ipaillnew <- rbind(ipaillnew, ipaill.extras)
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
 ## ---- CreateMap ----
