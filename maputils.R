@@ -11,6 +11,16 @@ geocodeL <- function(ipapubs)
   return(ipapubs)
 }
 
+updateOne <- function(ipapubs, ipapubs.updated , language)
+{
+  ii <- subset(ipapubs.updated, Language==language)
+  nn <- geocodeL(ii)
+  r <- which(ipapubs$Language == language)
+  ipapubs[r, "lat"] <- nn[,"lat"]
+  ipapubs[r, "lon"] <- nn[,"lon"]
+  
+  return(ipapubs)
+}
 createPopupText <- function(language, pub, lcount=NULL)
 {
   ## create a clickable language link, if there is a publication link

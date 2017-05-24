@@ -20,6 +20,11 @@ if (file.exists("ipastuff.Rda")) {
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
 
+## Small corrections go here
+#ii <- updateOne(ipaillnew, ipaill, language="Jamaican Creole")
+#ipaillnew <- ii
+#save(ipapubs, ipaillnew, file="ipastuff.Rda")
+
 ## check whether the csv and address structures match
 newones <- setdiff(ipaill$Language, ipaillnew$Language)
 if (length(newones) > 0) {
