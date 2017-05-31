@@ -18,7 +18,7 @@ updateOne <- function(ipapubs, ipapubs.updated , language)
   r <- which(ipapubs$Language == language)
   ipapubs[r, "lat"] <- nn[,"lat"]
   ipapubs[r, "lon"] <- nn[,"lon"]
-  
+  ipapubs[r, "Address"] <- nn[,"Address"]
   return(ipapubs)
 }
 createPopupText <- function(language, pub, lcount=NULL)

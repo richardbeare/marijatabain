@@ -22,7 +22,9 @@ if (file.exists("ipastuff.Rda")) {
 
 ## Small corrections go here
 #ii <- updateOne(ipaillnew, ipaill, language="Jamaican Creole")
+#ii <- updateOne(ipaillnew, ipaill, language="Galician")
 #ipaillnew <- ii
+#  ipaillnew$popup <- createPopupText2(ipaillnew$Language, ipaillnew$Publication, ipaillnew$Recording, ipaillnew$pinstr, ipaillnew$Address)
 #save(ipapubs, ipaillnew, file="ipastuff.Rda")
 
 ## check whether the csv and address structures match
