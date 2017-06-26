@@ -37,3 +37,4 @@ read_chunk("mkMaps.R")
 
 Funded by the Australian Research Council, and LaTrobe University Linguistics and Phonetics.
 
+Last update: `r format(Sys.time(), '%d %B, %Y')`.
