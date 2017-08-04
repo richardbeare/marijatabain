@@ -23,6 +23,7 @@ if (file.exists("ipastuff.Rda")) {
 ## Small corrections go here
 #ii <- updateOne(ipaillnew, ipaill, language="Jamaican Creole")
 #ii <- updateOne(ipaillnew, ipaill, language="Galician")
+#ii <- updateOne(ipaillnew, ipaill, language="Telugu")
 ## ii <- updateOne(ipaillnew, ipaill, language="Setswana (South African)")
 #ipaillnew <- ii
 #  ipaillnew$popup <- createPopupText2(ipaillnew$Language, ipaillnew$Publication, ipaillnew$Recording, ipaillnew$pinstr, ipaillnew$Address)
