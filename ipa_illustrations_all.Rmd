@@ -12,6 +12,24 @@ output: html_document
   ga('send', 'pageview');
 
 </script>
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+   .col4 {
+    font-size: 10px;
+    columns: 4 70px;
+    -webkit-columns: 4 70px;
+    -moz-columns: 4 70px;
+  }
+</style>
 
 
 The map below shows (approximate) locations of languages for which there is an Illustration in the 
@@ -19,6 +37,10 @@ Journal of the International Phonetic Association. Green markers denote Illustra
 in the Handbook of the International Phonetic Association.
 
 Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available. Languages marked with * have multiple pins.
+
+Use text search to locate languages by name. Clicking on links at the end of the page will zoom to the language pin.
+
+Please use the github [issue tracker](https://github.com/richardbeare/marijatabain/issues/) to report problems.
 
 ```{r, echo=FALSE}
 library(knitr)
@@ -30,7 +52,7 @@ read_chunk("mkMaps.R")
 ```{r, CreateMap, echo=FALSE}
 
 ```
-```{r,DisplayMapEveryone, echo=FALSE}
+```{r,DisplayMapEveryone, echo=FALSE, fig.width=8}
 
 ```
 <br>
@@ -38,3 +60,8 @@ read_chunk("mkMaps.R")
 Funded by the Australian Research Council, and LaTrobe University Linguistics and Phonetics.
 
 Last update: `r format(Sys.time(), '%d %B, %Y')`.
+
+<div class="col4">
+```{r,DisplayLinks, echo=FALSE,results='asis'}
+```
+</div>

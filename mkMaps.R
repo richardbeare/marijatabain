@@ -39,10 +39,17 @@ if (length(newones) > 0) {
   ipaillnew <- rbind(ipaillnew, ipaill.extras)
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
+
+linkstuff <- createJS(ipaillnew, zoom=7)
+
 ## ---- CreateMap ----
 m1 <- theMap(ipapubs, type="c")
 m2 <- theMap(ipaillnew, type="c")
-
+m2 <- htmlwidgets::onRender(m2, linkstuff$js)
 ## ---- DisplayMapEveryone ----
 m2
+
+## ---- DisplayLinks ----
+cat(links=linkstuff$links)
+
 

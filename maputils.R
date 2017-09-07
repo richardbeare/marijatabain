@@ -53,6 +53,28 @@ createPopupText2 <- function(language, pub, recording, lcount=NULL, address=NULL
   return(popup)
 }
 
+createJS <- function(lang.df, zoom)
+{
+  tt <- 1:nrow(lang.df)
+  lang.df <- mutate(lang.df, jsid=paste0("#zoomto", tt))
+  ## create the click handler
+  oneLink <- function(df, zoom)
+  {
+    sv <- paste0('map.setView([', as.character(df$lat), ', ',as.character(df$lon), '], ', as.character(zoom), ');')
+    a1 <- paste0('$(document).on("click", "', df$jsid)
+    a2 <- paste(c('", function(e){',
+                 'e.preventDefault();',
+                 sv, '});'), collapse = "\n")
+    a2 <- paste0(a1, a2, "\n")
+    return(a2)
+  }
+  fbody<- map_chr(1:nrow(lang.df), ~oneLink(lang.df[.x,], zoom))
+  entire.function <- paste(c("function(el, x) {",
+                             "var map = this;", fbody, "}"), collapse="\n")
+  ## Create link text
+  lt <- paste0("[", lang.df$Language, "](#){", lang.df$jsid, "}  \n")
+  return(list(links=lt, js=entire.function))
+}
 ## icons
 mI <- function(iconfile) {
     makeIcon(
