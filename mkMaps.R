@@ -20,6 +20,16 @@ if (file.exists("ipastuff.Rda")) {
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
 
+## Check to see whether there are extra updates necessary
+newlangs <- setdiff(ipaill$Language, ipaillnew$Language)
+if (length(newlangs) > 0) {
+  to.update <- subset(ipaill, Language %in% newlangs)
+  langs.updated <- geocodeL(to.update)
+  langs.updated$popup <- createPopupText2(to.update$Language, to.update$Publication, to.update$Recording, 
+                                          to.update$pinstr, to.update$Address)
+  ipaillnew <- rbind(ipaillnew, langs.updated)
+  save(ipapubs, ipaillnew, file="ipastuff.Rda")
+}
 ## Small corrections go here
 #ii <- updateOne(ipaillnew, ipaill, language="Jamaican Creole")
 #ii <- updateOne(ipaillnew, ipaill, language="Galician")
