@@ -2,15 +2,29 @@ library(leaflet)
 library(ggmap)
 library(tidyr)
 library(dplyr)
+
+
+geocodesleep <- function(location) {
+  Sys.sleep(0.25)
+  return(geocode(location))
+}
 geocodeL <- function(ipapubs)
 {
   a <- stringi::stri_trans_general(ipapubs$Address, "latin-ascii")
-  locations <- t(sapply(a, geocode))
+  locations <- t(sapply(a, geocodesleep))
   ipapubs$lat <- unlist(locations[,"lat"])
   ipapubs$lon <- unlist(locations[,"lon"])
   return(ipapubs)
 }
 
+geocodeFailed <- function(ipageo) {
+  failed <- which(is.na(ipageo$lat))
+  a <- stringi::stri_trans_general(ipageo$Address[failed], "latin-ascii")
+  locations <- t(sapply(a, geocodesleep))
+  ipageo$lat[failed] <- unlist(locations[,"lat"])
+  ipageo$lon[failed] <- unlist(locations[,"lon"])
+  return(ipageo)
+}
 updateOne <- function(ipapubs, ipapubs.updated , language)
 {
   ii <- subset(ipapubs.updated, Language==language)
@@ -26,7 +40,6 @@ createPopupText <- function(language, pub, lcount=NULL)
   ## create a clickable language link, if there is a publication link
   ## Otherwise have a publication title following the language name
   ## substitute DOI for the appropriate link
-  
   pub <- gsub("^DOI:", "doi:", pub)
   pub <- gsub("^doi:", "http://dx.doi.org/", pub)
   links <- grep("^http", pub)
@@ -39,7 +52,6 @@ createPopupText2 <- function(language, pub, recording, lcount=NULL, address=NULL
   ## create a clickable language link, if there is a publication link
   ## Otherwise have a publication title following the language name
   ## substitute DOI for the appropriate link
-  
   if (length(pub) != length(recording)) {stop("recording and pub links dont match\n")}
   multitag <- paste("<sup>", lcount, "</sup>")
   multitag[lcount==""] <- ""
@@ -48,6 +60,7 @@ createPopupText2 <- function(language, pub, recording, lcount=NULL, address=NULL
   links <- grep("^http", pub)
   popup <- paste0(language, multitag, "</br>", pub, "</br>", address, "</br>")
   recordings <- (!is.na(recording)) | (nchar(recording)>0)
+  recordings[is.na(recordings)] <- FALSE
   popup[links] <- paste("<a href=\"", pub[links], "\">", language[links], multitag[links], "</a>", "</br>", address[links], "</br>", sep="")
   popup[recordings] <- paste(popup[recordings], "</br><a href=\"", recording[recordings], "\"> Recording</a>", sep="")
   return(popup)

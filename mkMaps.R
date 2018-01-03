@@ -2,7 +2,10 @@
 library(tidyverse)
 source("maputils.R")
 ipapubs <- read.csv("ipa_details.csv", stringsAsFactors=FALSE)
-ipaill.raw <- read.csv("IPA_Illustrations.csv", stringsAsFactors=FALSE, encoding="latin1")
+#ipaill.raw <- read.csv("IPA_Illustrations.csv", stringsAsFactors=FALSE, encoding="latin1")
+# use excel format - a bit easier to deal with different character sets
+ipaill.raw <- readxl::read_excel("IPA_Illustrations_enc.xlsx")
+
 ipaill <- gather(ipaill.raw, key=AddCol, value="Address", starts_with("Address"))
 ipaill <- subset(ipaill, Address != "")
 lcount <- summarise(group_by(ipaill, Language), pins=n())
@@ -20,6 +23,14 @@ if (file.exists("ipastuff.Rda")) {
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
 
+if (any(is.na(ipaillnew$lat))) {
+  message("Need to update list - some failed")
+  ipaillnew <- geocodeFailed(ipaillnew)
+  ipaillnew$popup <- createPopupText2(ipaill$Language, ipaill$Publication, ipaill$Recording, 
+                                      ipaill$pinstr, ipaill$Address)
+  save(ipapubs, ipaillnew, file="ipastuff.Rda")
+  
+}
 ## Check to see whether there are extra updates necessary
 newlangs <- setdiff(ipaill$Language, ipaillnew$Language)
 if (length(newlangs) > 0) {
