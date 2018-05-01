@@ -9,6 +9,15 @@ if (file.exists("mpubs.Rda")) {
   mpubs$popup <- createPopupText(mpubs$Language, mpubs$Publication)
   save(mpubs, file="mpubs.Rda")
 }
+if (any(is.na(mpubs$lat))) {
+  message("Need to update list - some failed")
+  mpubs <- geocodeFailed(mpubs)
+  mpubs$popup <- createPopupText3(mpubs$Language, mpubs$Publication,
+                                  mpubs$Address)
+  save(mpubs, file="mpubs.Rda")
+  
+}
+
 ## ---- DisplayMap1 ----
 
 m0 <- theMap(subset(mpubs, Pubtype=="illustration"), type="c")

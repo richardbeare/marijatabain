@@ -65,6 +65,20 @@ createPopupText2 <- function(language, pub, recording, lcount=NULL, address=NULL
   popup[recordings] <- paste(popup[recordings], "</br><a href=\"", recording[recordings], "\"> Recording</a>", sep="")
   return(popup)
 }
+createPopupText3 <- function(language, pub, lcount=NULL, address=NULL)
+{
+  ## create a clickable language link, if there is a publication link
+  ## Otherwise have a publication title following the language name
+  ## substitute DOI for the appropriate link
+  multitag <- paste("<sup>", lcount, "</sup>")
+  multitag[lcount==""] <- ""
+  pub <- gsub("^DOI:", "doi:", pub)
+  pub <- gsub("^doi:", "http://dx.doi.org/", pub)
+  links <- grep("^http", pub)
+  popup <- paste0(language, multitag, "</br>", pub, "</br>", address, "</br>")
+  popup[links] <- paste("<a href=\"", pub[links], "\">", language[links], multitag[links], "</a>", "</br>", address[links], "</br>", sep="")
+  return(popup)
+}
 
 createJS <- function(lang.df, zoom)
 {

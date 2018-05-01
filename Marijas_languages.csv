@@ -1,14 +1,15 @@
 Language,Address,Publication,Pubtype
-Warlpiri,"Yuendumu, Northern Territory, Australia",http://dx.doi.org/10.1121/1.4937751,
-Arrernte,"Alice Springs, Nothern Territory, Australia",doi:10.1016/j.wocn.2012.03.003,
-Yindjibarndi,"Roeburne, Western Australia, Australia",doi:10.1006/jpho.1999.0099,
-Yanyuwa,"Borroloola, Northern Territory, Australia",doi:10.1006/jpho.1999.0099,
-Australian English,"Sydney, New South Wales, Australia",DOI:10.1159/000028427,
-Russian,"Moscow, Russia",DOI:10.1159/000087223,
-French,"Paris, France",doi:10.1016/j.wocn.2006.05.001,
-Malayalam,"Thiruvananthapuram, Kerala, India",Tabain & Kochetov (in preparation) - An acoustic study of laterals in two Dravidian languages,
-Kannada,"Mysore, Karnataka, India","Tabain, Kochetov, Beare & Sreedevi (in prepration) - A comparative ultrasound study of coronal consonants in Arrernte and Kannada: manner contrasts.",
+Warlpiri,"Yuendumu, Northern Territory, Australia",https://doi.org/10.1121/1.4937751,
+Arrernte,"Alice Springs, Nothern Territory, Australia",https://doi.org/10.1016/j.wocn.2012.03.003,
+Yindjibarndi,"Roeburne, Western Australia, Australia",https://doi.org/10.1006/jpho.1999.0099,
+Yanyuwa,"Borroloola, Northern Territory, Australia",https://doi.org/10.1006/jpho.1999.0099,
+Australian English,"Sydney, New South Wales, Australia",https://doi.org/10.1159/000028427,
+Russian,"Moscow, Russia",https://doi.org/10.1159/000087223,
+French,"Paris, France",https://doi.org/10.1016/j.wocn.2006.05.001,
+Malayalam,"Thiruvananthapuram, Kerala, India",https://doi.org/10.1159/000478104,
+Kannada,"Mysore, Karnataka, India",https://doi.org/10.1159/000478104,
 Pitjantjatjara,"Ayers Rock, Australia",https://doi.org/10.1017/S0025100314000073,illustration
-Makasar,"Makassar, Indonesia",http://dx.doi.org/10.1017/S0025100314000243,illustration
-Goemai,"Jos, Nigeria",http://dx.doi.org/10.1017/S0025100314000243,illustration
-Lisu,"Shi Ba Cha, Yingjiang, Dehong, Yunnan, China","Tabain, Bradley & Yu (in preparation) - Lisu: Illustration of the IPA",illustration
+Makasar,"Makassar, Indonesia",https://doi.org/10.1017/S002510031500033X,illustration
+Goemai,"Jos, Nigeria",https://doi.org/10.1017/S0025100314000243,illustration
+Lisu,"Shi Ba Cha, Yingjiang, Dehong, Yunnan, China","Tabain, Bradley & Yu (In press) - Lisu: Illustration of the IPA",illustration
+Tongan,"Nuku'alofa, Tonga",Garellek & Tabain (submitted),illustration
