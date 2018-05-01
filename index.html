@@ -177,8 +177,8 @@ $(document).ready(function () {
       {
         "method": "addMarkers",
         "args": [
-          [-22.2538136, -23.698042, -20.7689815, -16.070278, 55.755826, 48.856614, 8.5241391, 12.2958104],
-          [131.7957309, 133.8807471, 117.1430197, 136.307222, 37.6172999, 2.3522219, 76.9366376, 76.6393805],
+          [-22.2538136, -23.698042, -20.7689815, -16.070278, -33.8688197, 55.755826, 48.856614, 8.5241391, 12.2958104],
+          [131.7957309, 133.8807471, 117.1430197, 136.307222, 151.2092955, 37.6172999, 2.3522219, 76.9366376, 76.6393805],
           {
             "iconUrl": {
               "data": "data:image/png;base64,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",
@@ -208,7 +208,7 @@ $(document).ready(function () {
             "riseOnHover": false,
             "riseOffset": 250
           },
-          ["<a href=\"http://dx.doi.org/10.1121/1.4937751\">Warlpiri<\/a>", "<a href=\"http://dx.doi.org/10.1016/j.wocn.2012.03.003\">Arrernte<\/a>", "<a href=\"http://dx.doi.org/10.1006/jpho.1999.0099\">Yindjibarndi<\/a>", "<a href=\"http://dx.doi.org/10.1006/jpho.1999.0099\">Yanyuwa<\/a>", "<a href=\"http://dx.doi.org/10.1159/000087223\">Russian<\/a>", "<a href=\"http://dx.doi.org/10.1016/j.wocn.2006.05.001\">French<\/a>", "Malayalam <sup>  <\/sup><\/br> Tabain & Kochetov (in preparation) - An acoustic study of laterals in two Dravidian languages", "Kannada <sup>  <\/sup><\/br> Tabain, Kochetov, Beare & Sreedevi (in prepration) - A comparative ultrasound study of coronal consonants in Arrernte and Kannada: manner contrasts."],
+          ["<a href=\"https://doi.org/10.1121/1.4937751\">Warlpiri<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1016/j.wocn.2012.03.003\">Arrernte<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1006/jpho.1999.0099\">Yindjibarndi<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1006/jpho.1999.0099\">Yanyuwa<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1159/000028427\">Australian English<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1159/000087223\">Russian<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1016/j.wocn.2006.05.001\">French<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1159/000478104\">Malayalam<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1159/000478104\">Kannada<\/a><\/br><\/br>"],
           null,
           null,
           null,
@@ -220,8 +220,8 @@ $(document).ready(function () {
       {
         "method": "addMarkers",
         "args": [
-          [-25.3444277, -5.1476651, 24.690243],
-          [131.0368822, 119.4327314, 97.740122],
+          [-25.3444277, -5.1476651, 9.8965273, 24.690243, -21.1393418],
+          [131.0368822, 119.4327314, 8.8583309, 97.740122, -175.204947],
           {
             "iconUrl": {
               "data": "data:image/png;base64,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",
@@ -251,7 +251,7 @@ $(document).ready(function () {
             "riseOnHover": false,
             "riseOffset": 250
           },
-          ["<a href=\"https://doi.org/10.1017/S0025100314000073\">Pitjantjatjara<\/a>", "<a href=\"http://dx.doi.org/10.1017/S0025100314000243\">Makasar<\/a>", "Lisu <sup>  <\/sup><\/br> Tabain, Bradley & Yu (in preparation) - Lisu: Illustration of the IPA"],
+          ["<a href=\"https://doi.org/10.1017/S0025100314000073\">Pitjantjatjara<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1017/S002510031500033X\">Makasar<\/a><\/br><\/br>", "<a href=\"https://doi.org/10.1017/S0025100314000243\">Goemai<\/a><\/br><\/br>", "Lisu<\/br>Tabain, Bradley & Yu (In press) - Lisu: Illustration of the IPA<\/br><\/br>", "Tongan<\/br>Garellek & Tabain (submitted)<\/br><\/br>"],
           null,
           null,
           null,
@@ -262,14 +262,14 @@ $(document).ready(function () {
       }
     ],
     "limits": {
-      "lat": [-25.3444277, 55.755826],
-      "lng": [2.3522219, 136.307222]
+      "lat": [-33.8688197, 55.755826],
+      "lng": [-175.204947, 151.2092955]
     }
   },
   "evals": [],
   "jsHooks": []
 }</script>
-<p>Last update: 25 April, 2018.</p>
+<p>Last update: 02 May, 2018.</p>
 
 
 
