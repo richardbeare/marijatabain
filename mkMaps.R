@@ -60,7 +60,7 @@ if (length(newones) > 0) {
   ipaillnew <- rbind(ipaillnew, ipaill.extras)
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
-
+ipaillnew <- locationJitter(ipaillnew)
 linkstuff <- createJS(ipaillnew, zoom=7)
 
 ## ---- CreateMap ----

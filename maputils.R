@@ -78,6 +78,22 @@ createPopupText3 <- function(language, pub, lcount=NULL, address=NULL)
   return(popup)
 }
 
+locationJitter <- function(df) {
+  myjitter <- function(d) {
+    scaler <- 0.01
+    res <- tibble(x=0, y=0)
+    nn <- nrow(d)
+    if (nn > 1) {
+      res <- tibble(x=runif(nn, min=-1, max=1)*scaler, y=runif(nn, min=-1, max=1)*scaler)
+    }
+    return(cbind(d, res))
+  }
+  kk <- nest(group_by(df, lat, lon))
+  kk <- mutate(kk, data2 = map(data, myjitter))
+  kk <- unnest(kk, data2)
+  kk <- mutate(kk, lat=lat+y, lon=lon+x, x=NULL, y=NULL)
+  return(kk)
+}
 createJS <- function(lang.df, zoom)
 {
   tt <- 1:nrow(lang.df)
