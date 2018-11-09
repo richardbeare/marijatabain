@@ -99,6 +99,7 @@ locationJitter <- function(df) {
 }
 createJS <- function(lang.df, zoom)
 {
+  lang.df <- arrange(lang.df, Language)
   tt <- 1:nrow(lang.df)
   lang.df <- mutate(lang.df, jsid=paste0("#zoomto", tt))
   ## create the click handler
