@@ -3,11 +3,14 @@ library(ggmap)
 library(tidyr)
 library(dplyr)
 
-
+if (file.exists("google_keys.R")) {
+  source("google_keys.R")
+}
 geocodesleep <- function(location) {
   Sys.sleep(0.25)
   return(geocode(location))
 }
+
 geocodeL <- function(ipapubs)
 {
   a <- stringi::stri_trans_general(ipapubs$Address, "latin-ascii")
