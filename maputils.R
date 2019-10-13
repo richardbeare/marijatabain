@@ -93,7 +93,8 @@ locationJitter <- function(df) {
   }
   kk <- nest(group_by(df, lat, lon))
   kk <- mutate(kk, data2 = map(data, myjitter))
-  kk <- unnest(kk, data2)
+  kk <- ungroup(unnest(kk, data2))
+  
   kk <- mutate(kk, lat=lat+y, lon=lon+x, x=NULL, y=NULL)
   return(kk)
 }

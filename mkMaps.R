@@ -1,4 +1,5 @@
 ## ---- Setup ----
+## need my modified ggmap
 library(tidyverse)
 source("maputils.R")
 ipapubs <- read.csv("ipa_details.csv", stringsAsFactors=FALSE)
