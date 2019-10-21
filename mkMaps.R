@@ -14,7 +14,7 @@ lcount <- summarise(group_by(ipaill, Language), pins=n())
 ipaill <- merge(ipaill, lcount, by.x="Language", by.y="Language")
 ipaill <- mutate(ipaill, pinstr=ifelse(pins==1, "", "*"))
 if (file.exists("ipastuff.Rda")) {
-  load("ipastuff.Rda")
+  j <- load("ipastuff.Rda")
 } else {
   ipapubs <- geocodeL(ipapubs)
   ipapubs$popup <- createPopupText(ipapubs$Language, ipapubs$Publication)
@@ -51,6 +51,19 @@ if (length(newlangs) > 0) {
 #  ipaillnew$popup <- createPopupText2(ipaillnew$Language, ipaillnew$Publication, ipaillnew$Recording, ipaillnew$pinstr, ipaillnew$Address)
 #save(ipapubs, ipaillnew, file="ipastuff.Rda")
 
+# Some fixes, 22/10/2019
+# Extra zip files. Spotted some duplications that weren't necessary and hadn't been fixed
+dummy <- function() {
+  # remove some duplicates to match the spreadsheet, so we don't need to recode everything
+  ii <- ipaill[-c(57,133),]
+  # reorder ii to match ipaillnew
+  ii <- arrange(ii, Language, Address)
+  ipaillnew <- arrange(ipaillnew, Language, Address)
+  ipaillnew$popup <- createPopupText2(ii$Language, ii$Publication, ii$Recording, 
+                                      ii$pinstr, ii$Address)
+  save(ipapubs, ipaillnew, file="ipastuff.Rda")
+  
+}
 ## check whether the csv and address structures match
 newones <- setdiff(ipaill$Language, ipaillnew$Language)
 if (length(newones) > 0) {
