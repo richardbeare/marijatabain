@@ -25,7 +25,7 @@ if (file.exists("ipastuff.Rda")) {
 }
 #
 # When some of the files were changed to have upper case
-function() {
+dummy <- function() {
   tofix <- which(tolower(basename(ipaillnew$Recording)) == basename(ipaillnew$Recording))
   N <- basename(ipaillnew$Recording[tofix])
   N <- gsub("^(.)", "\\U\\1", x=N, perl=TRUE)

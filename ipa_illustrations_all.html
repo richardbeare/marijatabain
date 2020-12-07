@@ -5152,18 +5152,6 @@ summary {
 <p>Click on the pin on the map to identify the language and follow the link to the publication and recordings, where available. Languages marked with * have multiple pins.</p>
 <p>Use text search to locate languages by name. Clicking on links at the end of the page will zoom to the language pin.</p>
 <p>Please use the github <a href="https://github.com/richardbeare/marijatabain/issues/">issue tracker</a> to report problems.</p>
-<pre><code>## function() {
-##   tofix &lt;- which(tolower(basename(ipaillnew$Recording)) == basename(ipaillnew$Recording))
-##   N &lt;- basename(ipaillnew$Recording[tofix])
-##   N &lt;- gsub(&quot;^(.)&quot;, &quot;\\U\\1&quot;, x=N, perl=TRUE)
-##   N &lt;- gsub(&quot;(-.)&quot;, &quot;\\U\\1&quot;, x=N, perl=TRUE)
-##   
-##   ipaillnew$Recording[tofix] &lt;- file.path(dirname(ipaillnew$Recording[tofix]), N)
-##   ipaillnew$popup &lt;- createPopupText2(ipaillnew$Language, ipaillnew$Publication, ipaillnew$Recording, 
-##                                       ipaillnew$pinstr, ipaillnew$Address)
-##   
-##   save(ipapubs, ipaillnew, file=&quot;ipastuff.Rda&quot;)
-## }</code></pre>
 <p><div id="htmlwidget-f223c72250d92f386608" style="width:768px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-f223c72250d92f386608">{
   "x": {
