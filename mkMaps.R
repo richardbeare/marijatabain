@@ -23,6 +23,20 @@ if (file.exists("ipastuff.Rda")) {
                                       ipaill$pinstr, ipaill$Address)
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
+#
+# When some of the files were changed to have upper case
+function() {
+  tofix <- which(tolower(basename(ipaillnew$Recording)) == basename(ipaillnew$Recording))
+  N <- basename(ipaillnew$Recording[tofix])
+  N <- gsub("^(.)", "\\U\\1", x=N, perl=TRUE)
+  N <- gsub("(-.)", "\\U\\1", x=N, perl=TRUE)
+  
+  ipaillnew$Recording[tofix] <- file.path(dirname(ipaillnew$Recording[tofix]), N)
+  ipaillnew$popup <- createPopupText2(ipaillnew$Language, ipaillnew$Publication, ipaillnew$Recording, 
+                                      ipaillnew$pinstr, ipaillnew$Address)
+  
+  save(ipapubs, ipaillnew, file="ipastuff.Rda")
+}
 
 if (any(is.na(ipaillnew$lat))) {
   message("Need to update list - some failed")
