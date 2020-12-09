@@ -40,6 +40,9 @@ Click on the pin on the map to identify the language and follow the link to the 
 
 Use text search to locate languages by name. Clicking on links at the end of the page will zoom to the language pin.
 
+Please zoom in further if your selected language isn't immediately visible. Some language locations are in close
+proximity and overlap one another in the standard view.
+
 Please use the github [issue tracker](https://github.com/richardbeare/marijatabain/issues/) to report problems.
 
 ```{r, echo=FALSE}
