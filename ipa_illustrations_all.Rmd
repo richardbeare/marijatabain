@@ -58,6 +58,11 @@ read_chunk("mkMaps.R")
 ```{r,DisplayMapEveryone, echo=FALSE, fig.width=8}
 
 ```
+
+![](JIPA_50_small.png)
+
+Congratulations to the Journal of the International Phonetics Association for their [50th anniversary issue](https://doi.org/10.1017/S0025100320000298)
+
 <br>
 
 Funded by the Australian Research Council, and LaTrobe University Linguistics and Phonetics.
