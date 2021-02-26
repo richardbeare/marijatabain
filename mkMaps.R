@@ -76,6 +76,15 @@ dummy <- function() {
   ipaillnew$popup <- createPopupText2(ii$Language, ii$Publication, ii$Recording, 
                                       ii$pinstr, ii$Address)
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
+
+  #############################
+  ## Missing recordings 26/02/2021
+ 
+  ipaillnew[which(ipaillnew$Language == "Tongan"), "Recording"] <- "https://www.internationalphoneticassociation.org/sites/default/files/JIPArecordings/Tongan.zip"
+  ipaillnew[which(ipaillnew$Language == "Central Lisu"), "Recording"] <- "https://www.internationalphoneticassociation.org/sites/default/files/JIPArecordings/Lisu.zip"
+  ipaillnew$popup <- createPopupText2(ipaillnew$Language, ipaillnew$Publication, ipaillnew$Recording, 
+                                      ipaillnew$pinstr, ipaillnew$Address)
+  save(ipapubs, ipaillnew, file="ipastuff.Rda")
   
 }
 ## check whether the csv and address structures match
