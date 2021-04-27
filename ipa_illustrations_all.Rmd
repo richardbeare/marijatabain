@@ -55,7 +55,7 @@ read_chunk("mkMaps.R")
 ```{r, CreateMap, echo=FALSE}
 
 ```
-```{r,DisplayMapEveryone, echo=FALSE, fig.width=8}
+```{r,DisplayMapEveryone, echo=FALSE, fig.width=10,fig.height=6}
 
 ```
 
