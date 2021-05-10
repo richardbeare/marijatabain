@@ -61,15 +61,14 @@ read_chunk("mkMaps.R")
 ```
 
 
-### Congratulations 
+### Congratulations to
 
-To the authors of [Kalasha (Bumburet variety)](https://cup.linguistlist.org/journals/inaugural-jipa-most-illustrative-illustration-prize/) winners of the inaugural IPA "Most Illustrative Illustration" prize.
+* the authors of [Kalasha (Bumburet variety)](https://doi.org/10.1017/S0025100319000367) winners of the 
+inaugural JIPA ["Most Illustrative Illustration"](https://cup.linguistlist.org/journals/inaugural-jipa-most-illustrative-illustration-prize/) prize.
 
-To the shortlisted illustrations - [Ambel](https://doi.org/10.1017/S0025100320000237), [Kejom (Babanki)](https://doi.org/10.1017/S0025100319000264) and [Zhushan Mandarin](https://doi.org/10.1017/S0025100320000183).
+* the shortlisted illustrations - [Ambel](https://doi.org/10.1017/S0025100320000237), [Kejom (Babanki)](https://doi.org/10.1017/S0025100319000264) and [Zhushan Mandarin](https://doi.org/10.1017/S0025100320000183).
 
-
-
-To the Journal of the International Phonetics Association for their [50th anniversary issue](https://doi.org/10.1017/S0025100320000298)
+<br>
 
 ![](JIPA_50_small.png)
 
