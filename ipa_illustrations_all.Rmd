@@ -45,6 +45,7 @@ proximity and overlap one another in the standard view.
 
 Please use the github [issue tracker](https://github.com/richardbeare/marijatabain/issues/) to report problems.
 
+
 ```{r, echo=FALSE}
 library(knitr)
 read_chunk("mkMaps.R")
@@ -59,15 +60,28 @@ read_chunk("mkMaps.R")
 
 ```
 
-![](JIPA_50_small.png)
 
-Congratulations to the Journal of the International Phonetics Association for their [50th anniversary issue](https://doi.org/10.1017/S0025100320000298)
+### Congratulations 
+
+To the authors of [Kalasha (Bumburet variety)](https://cup.linguistlist.org/journals/inaugural-jipa-most-illustrative-illustration-prize/) winners of the inaugural IPA "Most Illustrative Illustration" prize.
+
+To the shortlisted illustrations - [Ambel](https://doi.org/10.1017/S0025100320000237), [Kejom (Babanki)](https://doi.org/10.1017/S0025100319000264) and [Zhushan Mandarin](https://doi.org/10.1017/S0025100320000183).
+
+
+
+To the Journal of the International Phonetics Association for their [50th anniversary issue](https://doi.org/10.1017/S0025100320000298)
+
+![](JIPA_50_small.png)
 
 <br>
 
 Funded by the Australian Research Council, and LaTrobe University Linguistics and Phonetics.
 
 Last update: `r format(Sys.time(), '%d %B, %Y')`.
+
+<br>
+
+## Index
 
 <div class="col4">
 ```{r,DisplayLinks, echo=FALSE,results='asis'}
