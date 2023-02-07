@@ -3,16 +3,17 @@ title: "Marija Tabain - Languages I have worked on"
 output: html_document
 ---
 
-<!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100444709-2"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ9QWKYC86"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-100444709-2');
-  
+  gtag('config', 'G-SZ9QWKYC86');
 </script>
+
 
 ```{r, echo=FALSE}
 library(knitr)
