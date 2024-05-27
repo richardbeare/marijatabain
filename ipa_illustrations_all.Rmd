@@ -65,6 +65,12 @@ read_chunk("mkMaps.R")
 
 ### Congratulations to
 
+* the authors of [Northern Tosk Albanian](https://doi.org/10.1017/S0025100322000044), winners of the 2nd JIPA Most Illustrative Illustration prize.
+
+* the shortlisted illustrations for the 2nd JIPA Most Illustrative Illustration prize - 
+[Armenian(Yerevan Eastern Armenian and Beirut Western Armenian)](https://doi.org/10.1017/S0025100323000130),
+[Lithuanan](https://doi.org/10.1017/S0025100323000105) and [San Sebastián del Monte Mixtec](https://doi.org/10.1017/S0025100322000226).
+
 * the authors of [Kalasha (Bumburet variety)](https://doi.org/10.1017/S0025100319000367) winners of the 
 inaugural JIPA ["Most Illustrative Illustration"](https://cup.linguistlist.org/journals/inaugural-jipa-most-illustrative-illustration-prize/) prize.
 
