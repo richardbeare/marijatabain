@@ -9,6 +9,11 @@ ipaill.raw <- readxl::read_excel("IPA_Illustrations_enc.xlsx")
 
 ipaill <- gather(ipaill.raw, key=AddCol, value="Address", starts_with("Address"))
 ipaill <- subset(ipaill, Address != "")
+ipaill <- mutate(ipaill,
+                 LL=str_extract(Address, r"{(\[.+\])$}"),
+                 lat_manual = as.numeric(str_extract(LL, r"{lat=([[:digit:]\.]+)}", group=1)),
+                 long_manual = as.numeric(str_extract(LL, r"{long=([[:digit:]\.]+)}", group=1)))
+                 
 lcount <- summarise(group_by(ipaill, Language), pins=n())
 
 ipaill <- merge(ipaill, lcount, by.x="Language", by.y="Language")
@@ -51,9 +56,13 @@ newlangs <- setdiff(ipaill$Language, ipaillnew$Language)
 if (length(newlangs) > 0) {
   to.update <- subset(ipaill, Language %in% newlangs)
   langs.updated <- geocodeL(to.update)
+  langs.updated <- mutate(langs.updated,
+                          lat = if_else(is.na(lat_manual), lat, lat_manual),
+                          lon = if_else(is.na(long_manual), lon, long_manual))
   langs.updated$popup <- createPopupText2(to.update$Language, to.update$Publication, to.update$Recording, 
                                           to.update$pinstr, to.update$Address)
-  ipaillnew <- rbind(ipaillnew, langs.updated)
+  ipaillnew <- bind_rows(ipaillnew, langs.updated)
+
   save(ipapubs, ipaillnew, file="ipastuff.Rda")
 }
 ## Small corrections go here
